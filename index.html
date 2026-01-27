@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A One Curtains | Premium Curtain Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <h1>A One Curtains</h1>
+    <p>Elegant Curtains • Custom Stitching • Perfect Finish</p>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="image.html">Our Works</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+    <!-- ===== SLIDER START ===== -->
+    <div class="slider" id="slider">
+        <img class="slide active" src="curtain1.jpg" alt="Curtain Showroom">
+        <img class="slide" src="curtain2.jpg" alt="Premium Curtains">
+        <img class="slide" src="curtain3.jpg" alt="Modern Curtain Designs">
+
+        <!-- Arrow buttons -->
+        <button class="arrow left" onclick="prevSlide()">❮</button>
+        <button class="arrow right" onclick="nextSlide()">❯</button>
+
+        <!-- Dots -->
+        <div class="dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+        </div>
+    </div>
+    <!-- ===== SLIDER END ===== -->
+
+    <h2>Welcome to A One Curtains</h2>
+    <p>
+        A One Curtains is a professional curtain showroom offering premium
+        quality curtains and blinds for homes, apartments, offices,
+        and commercial spaces.
+    </p>
+
+    <p>
+        We specialize in elegant designs, durable fabrics, custom stitching,
+        and perfect installation to enhance your interiors with style,
+        privacy, and comfort.
+    </p>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 A One Curtains. All Rights Reserved.
+</footer>
+
+<!-- WHATSAPP BUTTON -->
+
+</a>
+
+<!-- ===== SLIDER SCRIPT ===== -->
+<script>
+let current = 0;
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    dots.forEach(dot => dot.classList.remove("active"));
+
+    slides[index].classList.add("active");
+    dots[index].classList.add("active");
+}
+
+function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+}
+
+function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+}
+
+function goToSlide(index) {
+    current = index;
+    showSlide(current);
+}
+
+/* Auto slide */
+setInterval(nextSlide, 4000);
+
+/* Swipe support for mobile */
+let startX = 0;
+const slider = document.getElementById("slider");
+
+slider.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+});
+
+slider.addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) nextSlide();
+    if (endX - startX > 50) prevSlide();
+});
+</script>
+
+</body>
+</html>
