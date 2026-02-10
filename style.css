@@ -2,64 +2,58 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-scroll-behavior:smooth;
+font-family:'Segoe UI',sans-serif;
 }
 
 body{
-font-family:'Poppins',sans-serif;
-background:#111;
-color:white;
+background:#faf8f3;
+color:#333;
+line-height:1.6;
 }
 
 /* NAVBAR */
 
 nav{
+background:white;
+padding:18px;
+text-align:center;
+box-shadow:0 2px 8px rgba(0,0,0,0.08);
 position:sticky;
 top:0;
-background:rgba(0,0,0,0.8);
-backdrop-filter:blur(10px);
-padding:15px;
-text-align:center;
-border-bottom:1px solid gold;
 z-index:1000;
 }
 
 nav a{
-color:white;
-margin:0 20px;
+margin:0 18px;
 text-decoration:none;
+color:#333;
 font-weight:500;
 transition:.3s;
 }
 
 nav a:hover{
-color:gold;
+color:#c8a96a;
 }
 
-/* HEADER HERO */
+/* HERO */
 
 header{
-height:80vh;
+height:75vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),
-url('curtain1.jpg');
-background-size:cover;
-background-position:center;
+background:url("curtain1.jpg") center/cover;
+color:white;
 }
 
 header h1{
-font-size:45px;
-letter-spacing:2px;
+font-size:48px;
 }
 
 header p{
-color:#d4af37;
-font-size:18px;
-margin-top:10px;
+font-size:20px;
 }
 
 /* SECTION */
@@ -70,7 +64,7 @@ text-align:center;
 }
 
 h2{
-color:gold;
+color:#c8a96a;
 margin-bottom:20px;
 }
 
@@ -84,15 +78,14 @@ position:relative;
 
 .slider img{
 width:100%;
-border-radius:15px;
+border-radius:12px;
 }
 
 .prev,.next{
 position:absolute;
 top:50%;
 transform:translateY(-50%);
-background:black;
-color:white;
+background:white;
 border:none;
 padding:12px;
 cursor:pointer;
@@ -108,35 +101,37 @@ border-radius:50%;
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:20px;
+gap:25px;
 }
 
 .gallery img{
 width:280px;
-border-radius:15px;
+border-radius:12px;
 transition:.4s;
 }
 
 .gallery img:hover{
-transform:scale(1.08);
+transform:translateY(-8px);
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
 }
 
 /* CONTACT BOX */
 
 .contact-box{
-background:#1c1c1c;
-padding:40px;
+background:white;
+padding:35px;
 max-width:500px;
 margin:auto;
-border-radius:15px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
 /* BUTTON */
 
 .btn{
 display:inline-block;
-margin:12px;
-padding:12px 25px;
+margin:10px;
+padding:12px 28px;
 border-radius:30px;
 text-decoration:none;
 color:white;
@@ -144,28 +139,13 @@ color:white;
 
 .whatsapp{ background:#25D366; }
 .insta{ background:#E1306C; }
-.call{ background:#007bff; }
-
-/* FLOAT WHATSAPP */
-
-.float{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#25D366;
-color:white;
-padding:15px 18px;
-border-radius:50%;
-font-size:22px;
-text-decoration:none;
-}
 
 /* FOOTER */
 
 footer{
-background:#000;
+background:#f1ede4;
 padding:40px;
-border-top:2px solid gold;
+margin-top:40px;
 }
 
 .footer-container{
@@ -176,16 +156,15 @@ justify-content:space-around;
 
 .footer-box{
 max-width:300px;
-margin:10px;
 }
 
 .footer-box h3{
-color:gold;
+color:#c8a96a;
 margin-bottom:15px;
 }
 
 .footer-bottom{
 text-align:center;
-margin-top:20px;
-color:#aaa;
+margin-top:25px;
+font-size:14px;
 }
