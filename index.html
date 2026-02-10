@@ -1,123 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>A One Curtains | Premium Curtain Shop</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="bSKr76irohgjtw66rjnoYkwL9yOzaOtcEFChyKHajxU" />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+<title>A One Curtains</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<!-- HEADER -->
 <header>
-    <h1>A One Curtains</h1>
-    <p>Elegant Curtains • Custom Stitching • Perfect Finish</p>
+<h1>A One Curtains</h1>
+<p>Premium Curtains & Interior Decor Solutions</p>
 </header>
 
-<!-- NAVIGATION -->
 <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="image.html">Our Works</a>
-    <a href="contact.html">Contact</a>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="image.html">Our Works</a>
+<a href="contact.html">Contact</a>
 </nav>
 
-<!-- MAIN CONTENT -->
-<div class="container">
+<section>
+<h2>Luxury Curtain Collection</h2>
 
-    <!-- ===== SLIDER START ===== -->
-    <div class="slider" id="slider">
-        <img class="slide active" src="curtain1.jpg" alt="Curtain Showroom">
-        <img class="slide" src="curtain2.jpg" alt="Premium Curtains">
-        <img class="slide" src="curtain3.jpg" alt="Modern Curtain Designs">
+<div class="slider">
+<img id="slide" src="curtain1.jpg">
+<button class="prev" onclick="prev()">❮</button>
+<button class="next" onclick="next()">❯</button>
+</div>
 
-        <!-- Arrow buttons -->
-        <button class="arrow left" onclick="prevSlide()">❮</button>
-        <button class="arrow right" onclick="nextSlide()">❯</button>
+</section>
 
-        <!-- Dots -->
-        <div class="dots">
-            <span class="dot active" onclick="goToSlide(0)"></span>
-            <span class="dot" onclick="goToSlide(1)"></span>
-            <span class="dot" onclick="goToSlide(2)"></span>
-        </div>
-    </div>
-    <!-- ===== SLIDER END ===== -->
+<footer>
+<div class="footer-container">
 
-    <h2>Welcome to A One Curtains</h2>
-    <p>
-        A One Curtains is a professional curtain showroom offering premium
-        quality curtains and blinds for homes, apartments, offices,
-        and commercial spaces.
-    </p>
+<div class="footer-box">
+<h3>A One Curtains</h3>
+<p>Elegant curtain stitching and installation service.</p>
+</div>
 
-    <p>
-        We specialize in elegant designs, durable fabrics, custom stitching,
-        and perfect installation to enhance your interiors with style,
-        privacy, and comfort.
-    </p>
+<div class="footer-box">
+<h3>Business Hours</h3>
+<p>Mon – Sat : 9 AM – 7 PM</p>
+<p>Sunday : Customer Visit</p>
+</div>
+
+<div class="footer-box">
+<h3>Contact</h3>
+<p>Anakkara, Idukki</p>
+<p>9605001083</p>
+</div>
 
 </div>
 
-<!-- FOOTER -->
-<footer>
-    © 2026 A One Curtains. All Rights Reserved.
+<div class="footer-bottom">
+© 2026 A One Curtains
+</div>
 </footer>
 
-<!-- WHATSAPP BUTTON -->
+<a href="https://wa.me/919605001083" class="float">💬</a>
 
-</a>
-
-<!-- ===== SLIDER SCRIPT ===== -->
 <script>
-let current = 0;
-const slides = document.querySelectorAll(".slide");
-const dots = document.querySelectorAll(".dot");
+let images=["curtain1.jpg","curtain2.jpg","curtain3.jpg"];
+let index=0;
 
-function showSlide(index) {
-    slides.forEach(slide => slide.classList.remove("active"));
-    dots.forEach(dot => dot.classList.remove("active"));
-
-    slides[index].classList.add("active");
-    dots[index].classList.add("active");
+function show(){
+document.getElementById("slide").src=images[index];
 }
 
-function nextSlide() {
-    current = (current + 1) % slides.length;
-    showSlide(current);
+function next(){
+index=(index+1)%images.length;
+show();
 }
 
-function prevSlide() {
-    current = (current - 1 + slides.length) % slides.length;
-    showSlide(current);
+function prev(){
+index=(index-1+images.length)%images.length;
+show();
 }
-
-function goToSlide(index) {
-    current = index;
-    showSlide(current);
-}
-
-/* Auto slide */
-setInterval(nextSlide, 4000);
-
-/* Swipe support for mobile */
-let startX = 0;
-const slider = document.getElementById("slider");
-
-slider.addEventListener("touchstart", e => {
-    startX = e.touches[0].clientX;
-});
-
-slider.addEventListener("touchend", e => {
-    let endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50) nextSlide();
-    if (endX - startX > 50) prevSlide();
-});
 </script>
 
 </body>
-
 </html>
